@@ -4,9 +4,9 @@ var player1;
 var player2;
 
 function Player() {
-  this.currentScore = 0;
+  this.roundTotal = 0;
   this.totalScore = 0;
-  this.dieRoll = 0;
+  this.roll = 0;
   //this.turn = 0;
 }
 
@@ -15,55 +15,68 @@ function dieRoll(){
     console.log(number);
 }
 Player.prototype.roll = function () {
-  if(this.dieRoll === 1) {
-    this.currentScore = 0;
+  if(this.roll === 1) {
+    this.roundTotal = 0;
     counter++;
   } else {
-    this.currentScore += this.dieRoll;
+    this.roundTotal += this.roll;
     }
-  }
-  Player.prototype.hold = function() {
-    this.totalScore += this.currentScore;
-    this.currentScore = 0;
   }
 
   Player.prototype.rollOne = function(){
-    if(this.dieRoll === 1) {
-      this.currentScore = 0;
+    if(this.roll === 1) {
+      this.roundTotal = 0;
       alert("You rolled a ONE! Your turn is OVER! Dundundunnnnnn!!");
     } else {
-      this.currentScore += this.dieRoll;
+      this.roundTotal += this.roll;
     }
   }
 
-
+  Player.prototype.hold = function() {
+    this.totalScore += this.roundTotal;
+    this.roundTotal = 0;
+    alert("Your turn is over. Next player's turn.");
+  }
 
 //Front-End
 $(document).ready(function (){
 
-  var die1 = $("#randomnum1").val("counter");
+  player1 = new Player();
+  player2 = new Player();
 
+  // var die1 = $("#randomnum1").val("counter");
 
-    $("#roll1").click(function(){
-      // dieRoll();
-      // var number = Math.ceil(Math.random() * 6);
-      // console.log(number);
-      $("#roll-result1").text(dieRoll());
+  //prototype rollOne
+    $("#roll1").click(function(){ //grab id roll1 from html
+      player1.roll = dieRoll();//play1 rolls die
+      $("#roll-result1").text(player1.roll); //die roll print round total
+      player1.rollOne();//call rollOne prototype to check if plyr has rlld one it will switch plyrs; if not die roll added to round total
+      $("#roundTotal1").text(player1.roundTotal);//round total is printed
     });
 
-    $("#roll2").click(function(){
-      // dieRoll();
-      // var number = Math.ceil(Math.random() * 6);
-      // console.log(number);
-      $("#roll-result2").text(dieRoll());
+    $("#roll2").click(function(){//same as above /
+      player2.roll = dieRoll();//same as above /
+      $("#roll-result2").text(player2.roll);//same as above /
+      player2.rollOne();//same as above /
+      $("#roundTotal2").text(player2.roundTotal);//same as above /
     });
 
-    player1 = new Player();
-    player2 = new Player();
+// prototype hold
+    $("#hold1").click(function(){//call click lister button on player1
+      player1.hold();//calling the hold function for ply1 and run in plyr prototype
+      $("#totalScore1").text(player1.totalScore);//text value sent to total score in the span class
+      $("#roundTotal1").empty();//empties the round total and the roll result for the current game
+      $("#roll-result1").empty();
+    });
 
-    // if (switchPlayer(this.dieRoll === 1)){
-    //   $(alert("Sorry! Your turn is over")).show();
-    // } else {
-    //   this.currentScore += this.dieRoll;
-    // }
+    $("#hold2").click(function(){//call click lister button on player1
+      player2.hold();//calling the hold function for ply1 and run in plyr prototype
+      $("#totalScore2").text(player2.totalScore);//text value sent to total score in the span class
+      $("#roundTotal2").empty();//empties the round total and the roll result for the current game
+      $("#roll-result2").empty();
+    });
+
+
+
+
 });
