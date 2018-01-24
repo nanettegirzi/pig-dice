@@ -1,3 +1,19 @@
 h1{
   text-align: center;
 }
+
+
+body {
+  font-size: 14px;
+  background-image: url("../img/dice.jpg");
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  background-color: #bccfc7;
+  text-align: center;
+  float: center;
+  border: 3px solid black;
+}

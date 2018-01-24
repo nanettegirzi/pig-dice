@@ -38,6 +38,11 @@ Player.prototype.roll = function () {
     alert("Your turn is over. Next player's turn.");
   }
 
+Player.prototype.winnerCheck = function(){
+  if (this.totalScore >= 100) {
+    alert("YOU WIN!!!! CONGRATULATIONS!!!!!!!");
+  }
+}
 //Front-End
 $(document).ready(function (){
 
@@ -67,6 +72,7 @@ $(document).ready(function (){
       $("#totalScore1").text(player1.totalScore);//text value sent to total score in the span class
       $("#roundTotal1").empty();//empties the round total and the roll result for the current game
       $("#roll-result1").empty();
+      player1.winnerCheck();
     });
 
     $("#hold2").click(function(){//call click lister button on player1
@@ -74,6 +80,7 @@ $(document).ready(function (){
       $("#totalScore2").text(player2.totalScore);//text value sent to total score in the span class
       $("#roundTotal2").empty();//empties the round total and the roll result for the current game
       $("#roll-result2").empty();
+      player1.winnerCheck();
     });
 
 
