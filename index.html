@@ -2,21 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
-    <script src="scripts/jquery-3.3.1.js"></script>
-    <script src="scripts/scripts.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
     <title>Pig Dice Game</title>
   </head>
   <body>
     <div class="container">
+      <div class="play">
+
       <h1>Let's Play Pig Dice</h1>
-    <button type="submit" class="roll btn btn-success" id="roll">Roll</button>
-    <button type="submit" class="hold btn btn-success" id="hold">Hold</button>
-
-      </form>
-
+      <br>
+      <button type="submit" name="roll" class = "btn btn-success" id="roll">Roll</button>
+      <button type="submit" name="hold" class = "btn btn-primary" id="hold">Hold</button>
+  </div>
+  <br>
+  <br>
+  <div class="randomroll1">
+    <p id="randomnum1"><span class="rollresult1"</span>Dice Roll</p>
+  </div>
+  <br>
+  
+  <br>
+  <br>
+  <div class="scores">
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Player 1</h4>
+    </div>
+    <div class="col-md-6">
+      <h4>Player 2</h4>
     </div>
 
+  </div>
+
+  </div>
+</div>
   </body>
 </html>
