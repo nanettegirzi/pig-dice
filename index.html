@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>Pig Dice Game</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="play">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pig Dice Game</title>
+</head>
+<body>
+  <div class="container">
+    <div class="new-game">
+      <!-- make new game page here with new game button and new game prototype  -->
+    </div>
 
+
+    <div class="play">
       <h1>Let's Play Pig Dice</h1>
-      <br>
-      <!-- <button type="submit" name="roll" class = "btn btn-success" id="roll">Roll</button>
-      <button type="submit" name="hold" class = "btn btn-primary" id="hold">Hold</button> -->
-  </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Player 1</h4>
+          <br>
+          <button type="submit" name="roll1" class = "btn btn-success" id="roll1">Roll</button>
+          <button type="submit" name="hold1" class = "btn btn-danger" id="hold1">Hold</button>
+          <br>
+          <br>
+          <h4>Die Roll: <span id="roll-result1"></span></h4>
+          <p>Round Total: <span id="roundTotal1"></span></p>
+          <p>Total Score: <span id="totalScore1"></span></p>
+        </div>
+        <div class="col-md-6">
+          <h4>Player 2</h4>
+          <br>
+          <button type="submit" name="roll2" class = "btn btn-success" id="roll2">Roll</button>
+          <button type="submit" name="hold2" class = "btn btn-danger" id="hold2">Hold</button>
+          <br>
+          <br>
+          <h4>Die Roll: <span id="roll-result2"></span></h4>
+          <p>Round Total: <span id="roundTotal2"></span></p>
+          <p>Total Score: <span id="totalScore2"></span></p>
+        </div>
+      </div>
+      </div>
+      <div class="instructions">
+        <h3>Instructions:</h3>
+        <p>
+          <h4>How Many Players</h4>
+The game of Pig is best with two players, but it can work with more people. Just keep in mind that the downtime between turns grows longer with each additional player, which could be challenging for the little ones.
 
-  <br>
-  <br>
-  <div class="scores">
-  <div class="row">
-    <div class="col-md-6">
-      <h4>Player 1</h4>
-      <br>
-      <button type="submit" name="roll1" class = "btn btn-success" id="roll1">Roll</button>
-      <button type="submit" name="hold1" class = "btn btn-danger" id="hold1">Hold</button>
-      <br>
-      <br>
-      <h4>Die Roll: <span id="roll-result1"></span></h4>
-      <p>Round Total: <span id="roundTotal1"></span></p>
-      <p>Total Score: <span id="totalScore1"></span></p>
+<h4>How to Play</h4>
+On a turn, a player rolls the die repeatedly. The goal is to accumulate as many points as possible, adding up the numbers rolled on the die. However, if a player rolls a 1, the player's turn is over and any points they have accumulated during this turn are forfeited. Rolling a 1 doesn't wipe out your entire score, just the total earned during that particular roll.
+
+A player can also choose to hold (stop rolling) if they do not want to take a chance of rolling a 1 and losing all of their points from this turn. If the player chooses to hold, all of the points rolled during that turn are added to his or her score.
+
+When a player reaches a total of 100 or more points, the game ends and that player is the winner.
+
+</p>
     </div>
-    <div class="col-md-6">
-      <h4>Player 2</h4>
-      <br>
-      <button type="submit" name="roll2" class = "btn btn-success" id="roll2">Roll</button>
-      <button type="submit" name="hold2" class = "btn btn-danger" id="hold2">Hold</button>
-      <br>
-      <br>
-      <h4>Die Roll: <span id="roll-result2"></span></h4>
-      <p>Round Total: <span id="roundTotal2"></span></p>
-      <p>Total Score: <span id="totalScore2"></span></p>
-    </div>
-
   </div>
 
-  </div>
-</div>
   </body>
 </html>
