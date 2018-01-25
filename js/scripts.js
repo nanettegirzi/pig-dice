@@ -7,7 +7,6 @@ function Player() {
   this.roundTotal = 0;
   this.totalScore = 0;
   this.roll = 0;
-  //this.turn = 0;
 }
 
 function dieRoll(){
@@ -44,7 +43,9 @@ Player.prototype.winnerCheck = function(){
   }
 }
 //Front-End
-$(document).ready(function (){
+$(document).ready(function () {
+  // event.preventDefault;
+
 
   player1 = new Player();
   player2 = new Player();
@@ -83,7 +84,15 @@ $(document).ready(function (){
       player1.winnerCheck();
     });
 
+    $("#try-me").click(function () {
+      var player1Name = $("#Player1Name").val();
+      $("#playerOneName").text(player1Name);
+      var player2Name = $("#Player2Name").val();
+      $("#playerTwoName").text(player2Name)
+      // console.log(player1Name);
+      // console.log(player2Name);
 
-
-
+      $(".new-game").toggle();
+      $(".player").toggle();
+    });
 });
