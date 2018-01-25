@@ -4,7 +4,7 @@ h1{
 
 body {
   font-size: 14px;
-  background-image: url("../img/dice.jpg");
+  background-image: url("../img/dice2.jpeg");
   background-position: center 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -19,9 +19,14 @@ body {
   border: 4px solid white;
 }
 
+#try-me {
+  position: relative;
+  left: 42%;
+}
+
 .jumbotron {
   background-color: #bccfc7;
-  text-align: center;
+  text-align: left;
   float: center;
   border: 4px solid white;
 }

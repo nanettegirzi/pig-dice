@@ -42,6 +42,17 @@ Player.prototype.winnerCheck = function(){
     alert("YOU WIN!!!! CONGRATULATIONS!!!!!!!");
   }
 }
+
+function clearFields() {
+  $("#Player1Name").val("");
+  $("#Player2Name").val("");
+  $("#roll-result1").val("");
+  $("#roundTotal1").val("");
+  $("#roll-result2").val("");
+  $("#roundTotal2").val("");
+  $("#totalScore1").val("");
+  $("#totalScore2").val("");
+}
 //Front-End
 $(document).ready(function () {
   // event.preventDefault;
@@ -94,5 +105,14 @@ $(document).ready(function () {
 
       $(".new-game").toggle();
       $(".player").toggle();
+    });
+
+  //clearFields();
+
+    $("#new-game-button").click(function () {
+      clearFields();
+      $(".player").hide();
+      $(".new-game").show();
+
     });
 });
