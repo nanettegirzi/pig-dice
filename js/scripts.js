@@ -25,7 +25,7 @@ Player.prototype.roll = function () {
   Player.prototype.rollOne = function(){
     if(this.roll === 1) {
       this.roundTotal = 0;
-      alert("You rolled a ONE! Your turn is OVER! Dundundunnnnnn!!");
+      alert("You rolled a ONE! Your turn is OVER! Dundundunnnnnn!! Next Player's Turn.");
     } else {
       this.roundTotal += this.roll;
     }
@@ -43,16 +43,18 @@ Player.prototype.winnerCheck = function(){
   }
 }
 
-function clearFields() {
+function clearPlayers() {
   $("#Player1Name").val("");
   $("#Player2Name").val("");
-  $("#roll-result1").val("");
-  $("#roundTotal1").val("");
-  $("#roll-result2").val("");
-  $("#roundTotal2").val("");
-  $("#totalScore1").val("");
-  $("#totalScore2").val("");
+  // $("#roll-result1").val("");
+  // $("#roundTotal1").val("");
+  // $("#roll-result2").val("");
+  // $("#roundTotal2").val("");
+  // $("#totalScore1").val("");
+  // $("#totalScore2").val("");
 }
+
+
 //Front-End
 $(document).ready(function () {
   // event.preventDefault;
@@ -110,7 +112,10 @@ $(document).ready(function () {
   //clearFields();
 
     $("#new-game-button").click(function () {
-      clearFields();
+      clearPlayers();
+      $("#totalScore1").empty();
+      $("#totalScore2").empty();
+
       $(".player").hide();
       $(".new-game").show();
 
